@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dapur Manis Jambi – Kue Kering dan Brownies Rumahan</title>
+<meta name="description" content="Kue kering dan brownies rumahan di Jambi. Pesan mudah lewat WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fff5f7; --surface:#ffffff; --ink:#3a1f2b; --muted:#7a5565; --line:#f0d5dd;
+  --brand:#b3264f; --on-brand:#ffffff; --accent:#f6c453; --on-accent:#3a2600; --soft:#fde6ec;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#1f1017; --surface:#2b1822; --ink:#fbe9ef; --muted:#c99fb0; --line:#4a2a39;
+    --brand:#ee6f94; --on-brand:#2a0a15; --soft:#35202b; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1f1017; --surface:#2b1822; --ink:#fbe9ef; --muted:#c99fb0; --line:#4a2a39;
+  --brand:#ee6f94; --on-brand:#2a0a15; --soft:#35202b; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 4.5rem);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 "Nunito",system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+h1,h2,h3{margin:0;font-family:"DM Serif Display",Georgia,serif;font-weight:400;line-height:1.12}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 0}
+.logo{font-family:"DM Serif Display",serif;font-size:1.4rem;text-decoration:none;color:var(--brand)}
+nav{display:flex;gap:1.3rem;font-weight:600;align-items:center}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+@media(max-width:620px){nav a:not(.keep){display:none}}
+.btn{display:inline-block;background:var(--brand);color:var(--on-brand);font-weight:700;padding:.75rem 1.4rem;border-radius:999px;text-decoration:none;border:0;cursor:pointer;font-size:1rem;font-family:inherit}
+.btn:hover{filter:brightness(1.08)}
+.btn.gold{background:var(--accent);color:var(--on-accent)}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:2.5rem;align-items:center;padding:4rem 0 3.5rem}
+.hero h1{font-size:clamp(2.6rem,7vw,4.6rem)}
+.hero p{max-width:33rem;color:var(--muted);margin:1.2rem 0 1.8rem}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem}
+.plate{aspect-ratio:1;border-radius:50%;background:var(--soft);border:3px dashed var(--brand);display:grid;place-items:center;font-size:clamp(4rem,14vw,7rem);text-align:center;line-height:1.1;max-width:360px;margin:0 auto;width:100%}
+.plate small{display:block;font:700 .95rem "Nunito",sans-serif;color:var(--muted);margin-top:.4rem}
+@media(max-width:780px){.hero{grid-template-columns:1fr;padding-top:2.5rem}}
+section{padding:3.2rem 0}
+section h2{font-size:clamp(1.9rem,4.5vw,2.8rem);margin-bottom:.6rem}
+.lead{color:var(--muted);max-width:36rem;margin:0 0 1.6rem}
+.tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.4rem}
+.tab{font:700 .95rem "Nunito",sans-serif;padding:.45rem 1.1rem;border-radius:999px;border:2px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.tab[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.1rem}
+.item{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.2rem;display:flex;flex-direction:column;gap:.45rem}
+.item .em{height:5.2rem;border-radius:12px;background:var(--soft);display:grid;place-items:center;font-size:2.8rem}
+.item h3{font-size:1.3rem}
+.item p{margin:0;color:var(--muted);font-size:.97rem;flex:1}
+.price{font-weight:800;color:var(--brand)}
+.item .btn{text-align:center;padding:.55rem 1rem;font-size:.95rem}
+.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.1rem}
+.steps li{counter-increment:s;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.3rem}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--accent);color:var(--on-accent);font-weight:800;margin-bottom:.7rem}
+.steps b{display:block;font-size:1.1rem;margin-bottom:.2rem}
+.steps span{color:var(--muted);font-size:.98rem}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.1rem}
+.info div{border-left:4px solid var(--brand);padding-left:1rem}
+.info b{display:block}
+.info span{color:var(--muted)}
+.contact{background:var(--brand);color:var(--on-brand);border-radius:24px;padding:2.5rem;display:grid;grid-template-columns:1.2fr .8fr;gap:2rem}
+.contact h2{color:inherit}
+.contact p{opacity:.92;margin:.6rem 0 0}
+.contact dl{margin:0;display:grid;gap:.8rem}
+.contact dt{font-weight:800}
+.contact dd{margin:0;opacity:.92}
+.contact .btn{background:var(--accent);color:var(--on-accent)}
+@media(max-width:780px){.contact{grid-template-columns:1fr;padding:1.6rem}}
+footer.f{padding:2rem 0 5rem;color:var(--muted);font-size:.92rem}
+.wa{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));z-index:25;box-shadow:0 4px 14px rgba(0,0,0,.28)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap bar">
+  <a class="logo" href="#atas" id="logo"></a>
+  <nav aria-label="Menu utama"><a href="#produk">Produk</a><a href="#cara">Cara pesan</a><a href="#info">Info</a><a class="keep btn" id="navWa" href="#" target="_blank" rel="noopener">Pesan</a></nav>
+</div></header>
+
+<main id="atas">
+  <div class="wrap hero">
+    <div>
+      <h1 id="judul"></h1>
+      <p id="deskripsi"></p>
+      <div class="cta"><a class="btn" id="ctaWa" href="#" target="_blank" rel="noopener">Pesan lewat WhatsApp</a><a class="btn ghost" href="#produk">Lihat menu</a></div>
+    </div>
+    <div class="plate" aria-hidden="true"><div>🍪🍫<small id="plateText"></small></div></div>
+  </div>
+
+  <section id="produk"><div class="wrap">
+    <h2>Menu kami</h2>
+    <p class="lead">Pilih kategori, lalu klik pesan. WhatsApp akan terbuka dengan pesan yang sudah terisi.</p>
+    <div class="tabs" id="tabs" role="group" aria-label="Filter kategori"></div>
+    <div class="grid" id="produkGrid"></div>
+  </div></section>
+
+  <section id="cara"><div class="wrap">
+    <h2>Cara pesan</h2>
+    <ol class="steps" id="caraList"></ol>
+  </div></section>
+
+  <section id="info"><div class="wrap">
+    <h2>Info penting</h2>
+    <div class="info" id="infoList"></div>
+  </div></section>
+
+  <section id="kontak"><div class="wrap"><div class="contact">
+    <div>
+      <h2>Mau pesan atau tanya dulu?</h2>
+      <p>Chat aja, kami balas secepatnya di jam buka.</p>
+      <p style="margin-top:1.4rem"><a class="btn" id="ctaWa2" href="#" target="_blank" rel="noopener">Chat WhatsApp</a></p>
+    </div>
+    <dl id="kontakList"></dl>
+  </div></div></section>
+</main>
+
+<footer class="f"><div class="wrap" id="footerText"></div></footer>
+<a class="btn gold wa" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Chat WhatsApp">WhatsApp</a>
+
+<script>
+/* ====== EDIT BAGIAN INI SAJA ====== */
+/* Website contoh (proyek simulasi) – semua data di bawah adalah data contoh. */
+const CONFIG = {
+  nama: "Dapur Manis Jambi",
+  judul: "Kue kering dan brownies rumahan, dibuat segar tiap pesanan.",
+  deskripsi: "Dari nastar sampai brownies panggang, semua dibuat dengan bahan pilihan dan bisa dipesan lewat WhatsApp tanpa ribet.",
+  badge: "Dibuat dengan cinta",
+  kategori: ["Semua", "Kue Kering", "Brownies", "Paket"],
+  produk: [
+    {kat:"Kue Kering", ikon:"🍍", nama:"Nastar 250 g", info:"Selai nanas buatan sendiri, lembut dan wangi mentega.", harga:"Rp55.000"},
+    {kat:"Kue Kering", ikon:"🧀", nama:"Kastengel 250 g", info:"Keju gurih renyah, cocok untuk teman ngeteh.", harga:"Rp60.000"},
+    {kat:"Kue Kering", ikon:"❄️", nama:"Putri Salju 250 g", info:"Lumer di mulut dengan taburan gula halus.", harga:"Rp50.000"},
+    {kat:"Kue Kering", ikon:"🍪", nama:"Choco Chip Cookies 250 g", info:"Renyah di luar, cokelatnya melimpah.", harga:"Rp45.000"},
+    {kat:"Brownies", ikon:"🍫", nama:"Brownies Panggang 20x20", info:"Fudgy, cokelat pekat, tekstur padat.", harga:"Rp70.000"},
+    {kat:"Brownies", ikon:"🧁", nama:"Brownies Kukus 20x10", info:"Lembut dan basah, favorit semua umur.", harga:"Rp55.000"},
+    {kat:"Brownies", ikon:"🥨", nama:"Brownies Kering 200 g", info:"Renyah seperti keripik, awet untuk oleh-oleh.", harga:"Rp40.000"},
+    {kat:"Paket", ikon:"🎁", nama:"Paket Hampers", info:"3 toples kue kering dan 1 brownies, plus kartu ucapan.", harga:"Rp150.000"}
+  ],
+  cara: [
+    ["Pilih menu", "Lihat daftar di atas dan tentukan jumlahnya."],
+    ["Klik pesan", "WhatsApp terbuka dengan pesan yang sudah terisi, tinggal kirim."],
+    ["Konfirmasi", "Kami cek stok, kirim total harga, dan jadwal pengambilan."],
+    ["Terima pesanan", "Ambil di tempat atau diantar ke area Kota Jambi."]
+  ],
+  info: [
+    ["Pemesanan", "Pesanan brownies H-1, kue kering dan hampers H-3."],
+    ["Pengantaran", "Antar ke area Kota Jambi, ongkir sesuai jarak."],
+    ["Pembayaran", "Transfer bank atau e-wallet setelah konfirmasi."]
+  ],
+  whatsapp: "6281234567890",   // format: 62 + nomor tanpa 0 di depan
+  alamat: "Jl. Contoh No. 5, Kota Jambi",
+  jam: "Setiap hari, 08.00–20.00 WIB",
+  instagram: "@dapurmanis.jambi"
+};
+/* ====== SELESAI ====== */
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const wa = t => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(t)}`;
+
+document.title = `${CONFIG.nama} – Kue Kering dan Brownies Rumahan`;
+$("logo").textContent = CONFIG.nama;
+$("judul").textContent = CONFIG.judul;
+$("deskripsi").textContent = CONFIG.deskripsi;
+$("plateText").textContent = CONFIG.badge;
+const sapa = `Halo ${CONFIG.nama}, saya mau pesan.`;
+["navWa","ctaWa","ctaWa2","waFloat"].forEach(id => $(id).href = wa(sapa));
+
+function renderProduk(kat){
+  const list = CONFIG.produk.filter(p => kat === "Semua" || p.kat === kat);
+  $("produkGrid").innerHTML = list.map(p => `
+    <article class="item">
+      <div class="em" aria-hidden="true">${esc(p.ikon)}</div>
+      <h3>${esc(p.nama)}</h3><p>${esc(p.info)}</p><div class="price">${esc(p.harga)}</div>
+      <a class="btn" target="_blank" rel="noopener" href="${wa(`Halo ${CONFIG.nama}, saya mau pesan ${p.nama}.`)}">Pesan</a>
+    </article>`).join("");
+}
+function renderTabs(aktif){
+  $("tabs").innerHTML = CONFIG.kategori.map(k => `<button type="button" class="tab" data-k="${esc(k)}" aria-pressed="${k === aktif}">${esc(k)}</button>`).join("");
+  $("tabs").querySelectorAll(".tab").forEach(b => b.addEventListener("click", () => { renderTabs(b.dataset.k); renderProduk(b.dataset.k); }));
+}
+renderTabs("Semua"); renderProduk("Semua");
+
+$("caraList").innerHTML = CONFIG.cara.map(s => `<li><b>${esc(s[0])}</b><span>${esc(s[1])}</span></li>`).join("");
+$("infoList").innerHTML = CONFIG.info.map(i => `<div><b>${esc(i[0])}</b><span>${esc(i[1])}</span></div>`).join("");
+$("kontakList").innerHTML = `<div><dt>Alamat</dt><dd>${esc(CONFIG.alamat)}</dd></div><div><dt>Jam buka</dt><dd>${esc(CONFIG.jam)}</dd></div><div><dt>Instagram</dt><dd>${esc(CONFIG.instagram)}</dd></div>`;
+$("footerText").textContent = `© ${new Date().getFullYear()} ${CONFIG.nama}. Website contoh proyek dari WebUMKM Jambi.`;
+</script>
+</body>
+</html>
